@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane prefHeight="453.0" prefWidth="442.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+   <top>
+      <Label text="Lab3_SpellChecker" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <bottom>
+      <Label fx:id="lblTime" alignment="BOTTOM_LEFT" contentDisplay="CENTER" text="Duration of operation" BorderPane.alignment="BOTTOM_LEFT" />
+   </bottom>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Choose the language:" />
+                  <ComboBox fx:id="cmbLanguage" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <TextArea fx:id="txtText" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="BOTTOM_RIGHT">
+               <children>
+                  <Button fx:id="btnSpellCheck" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check" />
+               </children>
+            </HBox>
+            <Label text="Wrong words" />
+            <TextArea fx:id="txtErrors" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Label fx:id="lblNumberErrors" text="Number of errors" textFill="RED" />
+                  <Button fx:id="btnClearText" mnemonicParsing="false" onAction="#doClearText" text="Clear Text" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" />
+   </padding>
 </BorderPane>
